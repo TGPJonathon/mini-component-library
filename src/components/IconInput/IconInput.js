@@ -16,12 +16,10 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
 
   return (
     <Wrapper for="search">
+      <VisuallyHidden>{label}</VisuallyHidden>
       <IconWrapper>
         <Icon size={elementSize} id={icon} />
       </IconWrapper>
-      <VisuallyHidden>
-        <label for="search">{label}</label>
-      </VisuallyHidden>
       <TextInput
         type="text"
         id="search"
@@ -33,7 +31,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
   position: relative;
   width: max-content;
   display: flex;
