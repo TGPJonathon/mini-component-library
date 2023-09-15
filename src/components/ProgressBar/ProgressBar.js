@@ -9,14 +9,17 @@ const SIZES = {
   small: {
     height: '8px',
     borderRadius: '4px',
+    padding: '0',
   },
   medium: {
     height: '12px',
     borderRadius: '4px',
+    padding: 0,
   },
   large: {
     height: '24px',
     borderRadius: '8px',
+    padding: '4px',
   },
 };
 
@@ -34,6 +37,7 @@ const ProgressBar = ({ value, size }) => {
     >
       <SVG
         color={COLORS.transparentGray35}
+        padding={barStyles.padding}
         aria-hidden="true"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +67,7 @@ const SVG = styled.svg`
   box-sizing: border-box;
   border-radius: 8px;
   background-color: ${(props) => props.color};
-  padding: 4px;
+  padding: ${(props) => props.padding};
 `;
 
 export default ProgressBar;
